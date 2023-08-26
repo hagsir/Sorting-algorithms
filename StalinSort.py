@@ -10,15 +10,19 @@ def shuffle(list):
         list[k] = aux
 
 def stalinSort(list):
-    newList=[]
-    num=list[0]
-    for i in range(len(list)):
-        if(list[i] < num):
-            list[i] = 0
-            
-
+    num = list[0]
+    i = 1
+    while i < len(list):
+        if(num > list[i]):
+            list.pop(i)
+        else:
+            num = list[i]
+            i+=1
+  
+print("Stalin sort algorithm")
 list = [1,2,3,4,5,6,7,8,9,10]
 shuffle(list)
 print("Initial list =", list)
 stalinSort(list)
-print(list)
+print("Final list =", list)
+print("Con = 1")
